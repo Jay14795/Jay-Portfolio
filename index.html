@@ -21,6 +21,7 @@
     background-repeat: repeat;
     color: #333;
     line-height: 1.6;
+    font-size: clamp(14px, 1.2vw, 18px);
   }
   a {
     color: #1a73e8;
@@ -50,12 +51,14 @@
     align-items: center;
     padding: 0 20px;
     height: 100%;
+    flex-wrap: wrap;
   }
   nav .logo {
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: filter 0.3s ease;
+    flex-shrink: 0;
   }
   nav .logo:hover {
     filter: drop-shadow(0 0 8px #aad4ff);
@@ -64,6 +67,9 @@
     list-style: none;
     display: flex;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-grow: 1;
   }
   nav ul li {
     font-weight: 600;
@@ -74,6 +80,7 @@
     position: relative;
     padding-bottom: 4px;
     transition: color 0.3s;
+    white-space: nowrap;
   }
   nav ul li a::after {
     content: "";
@@ -96,8 +103,10 @@
   /* Main container */
   main {
     max-width: 900px;
-    margin: 90px auto 40px; /* Push content below fixed header */
+    margin: 90px auto 40px;
     padding: 0 20px;
+    width: 90%;
+    box-sizing: border-box;
   }
 
   /* Sections */
@@ -137,14 +146,14 @@
   /* Headings */
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
     color: #0b3d91;
     margin-bottom: 8px;
     text-shadow: 0 0 4px #aac9ffbb;
   }
   h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
     color: #1a73e8;
     padding-bottom: 8px;
     margin-bottom: 25px;
@@ -160,6 +169,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
   }
   #about img {
     width: 160px;
@@ -174,7 +184,7 @@
     transform: scale(1.08);
   }
   #about div {
-    flex: 1;
+    flex: 1 1 300px;
   }
   #about p {
     font-size: 1.15rem;
@@ -220,6 +230,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+    justify-content: center;
   }
   .skill-item {
     background-color: #1a73e8;
@@ -271,6 +282,12 @@
   }
 
   /* Responsive */
+  @media (max-width: 900px) {
+    nav ul {
+      justify-content: center;
+    }
+  }
+
   @media (max-width: 700px) {
     #about {
       flex-direction: column;
@@ -278,20 +295,33 @@
     }
     #about img {
       margin-bottom: 25px;
+      width: 140px;
+      height: 140px;
     }
-  }
-  @media (max-width: 600px) {
     nav ul {
       gap: 14px;
     }
-    h1 {
-      font-size: 1.9rem;
+  }
+
+  @media (max-width: 500px) {
+    nav ul {
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    nav {
+      padding-bottom: 10px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+    }
+    main {
+      margin: 80px 10px 40px;
+      width: 95%;
     }
     section {
-      padding: 25px 20px;
-    }
-    .skills-list {
-      justify-content: center;
+      padding: 20px 15px;
     }
   }
 </style>
