@@ -52,17 +52,13 @@
     height: 100%;
   }
   nav .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 1.9rem;
-    letter-spacing: 2.5px;
-    color: #cce4ff;
-    text-shadow: 0 0 8px #aad4ffaa;
-    transition: text-shadow 0.3s ease;
-    cursor: default;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: filter 0.3s ease;
   }
   nav .logo:hover {
-    text-shadow: 0 0 15px #aad4ff;
+    filter: drop-shadow(0 0 8px #aad4ff);
   }
   nav ul {
     list-style: none;
@@ -152,7 +148,6 @@
     color: #1a73e8;
     padding-bottom: 8px;
     margin-bottom: 25px;
-    /* Removed border-bottom */
   }
   h3 {
     color: #0b3d91;
@@ -305,7 +300,13 @@
 
 <header>
   <nav>
-    <div class="logo">Jay Gandhi</div>
+    <a href="#about" class="logo" aria-label="Go to About Section">
+      <!-- Simple stylized initials logo SVG -->
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+        <circle cx="50" cy="50" r="48" stroke="#aad4ff" stroke-width="4" fill="#0b3d91" />
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="48" fill="#cce4ff">JG</text>
+      </svg>
+    </a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -458,6 +459,7 @@
     <p>F504, Pushkar Green, B/h Maruti Popular Showroom, Isanpur, Ahmedabad 382443</p>
     <p>Phone: +91 87339 18538</p>
     <p>Email: <a href="mailto:Jaygandhi147@gmail.com">Jaygandhi147@gmail.com</a></p>
+    <p>Portfolio: <a href="https://tinyurl.com/jaygandhiporfolio" target="_blank" rel="noopener noreferrer">https://tinyurl.com/jaygandhiporfolio</a></p>
   </section>
 </main>
 
