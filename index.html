@@ -28,7 +28,9 @@
   /* Header */
   header {
     position: fixed;
+    top: 0;
     width: 100%;
+    height: 70px;
     background: #004466;
     color: white;
     padding: 15px 0;
@@ -42,6 +44,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    height: 100%;
   }
   nav .logo {
     font-family: 'Montserrat', sans-serif;
@@ -69,7 +72,7 @@
   /* Main container */
   main {
     max-width: 900px;
-    margin: 110px auto 40px;
+    margin: 80px auto 40px; /* <-- Push content below fixed header */
     padding: 0 20px;
   }
 
@@ -108,11 +111,27 @@
     margin-bottom: 8px;
   }
 
-  /* About */
+  /* About with image */
+  #about {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  #about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+  #about div {
+    flex: 1;
+  }
   #about p {
     font-size: 1.15rem;
     color: #444;
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
   #about em {
     display: block;
@@ -189,6 +208,15 @@
   }
 
   /* Responsive */
+  @media (max-width: 700px) {
+    #about {
+      flex-direction: column;
+      text-align: center;
+    }
+    #about img {
+      margin-bottom: 20px;
+    }
+  }
   @media (max-width: 600px) {
     nav ul {
       gap: 12px;
@@ -222,14 +250,19 @@
 
 <main>
   <section id="about">
-    <h1>Jay Shashankkumar Gandhi</h1>
-    <em>Senior Quality Analyst</em>
-    <p>Dynamic Senior Quality Analyst with a proven track record at OpenXcell – AI Development Company,
-      specializing in automation testing and defect management. Skilled in leading QA teams, streamlining
-      testing workflows, and integrating AI tools to enhance efficiency and accuracy. Committed to
-      delivering high-quality software through strong cross-functional collaboration, clear communication,
-      and a passion for continuous improvement in quality assurance processes.</p>
-    <a href="#" class="btn-resume" onclick="alert('Please add your resume link here!')">Download Resume</a>
+    <img src="https://drive.google.com/file/d/1sS9Q4-RVB0J9_opRcUhGvU_Gm8AWOzmA/view?usp=sharing" alt="Jay Shashankkumar Gandhi" />
+    <div>
+      <h1>Jay Shashankkumar Gandhi</h1>
+      <em>Senior Quality Analyst</em>
+      <p>
+        Dynamic Senior Quality Analyst with a proven track record at OpenXcell – AI Development Company,
+        specializing in automation testing and defect management. Skilled in leading QA teams, streamlining
+        testing workflows, and integrating AI tools to enhance efficiency and accuracy. Committed to
+        delivering high-quality software through strong cross-functional collaboration, clear communication,
+        and a passion for continuous improvement in quality assurance processes.
+      </p>
+      <a href="#" class="btn-resume" onclick="alert('Please add your resume link here!')">Download Resume</a>
+    </div>
   </section>
 
   <section id="experience">
@@ -326,7 +359,7 @@
       <span class="skill-item">Web & API Testing</span>
       <span class="skill-item">Automation</span>
     </div>
-  </section> 
+  </section>
 
   <section id="contact">
     <h2>Contact</h2>
