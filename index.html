@@ -67,16 +67,28 @@
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 28px;
+    width: 30px;
     height: 24px;
     cursor: pointer;
+    z-index: 11000;
   }
   .hamburger div {
-    width: 28px;
+    width: 30px;
     height: 3px;
     background: white;
     border-radius: 3px;
     transition: all 0.3s ease;
+    transform-origin: 4px 2px;
+  }
+  /* Hamburger open state */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
   /* Nav Menu */
@@ -124,7 +136,7 @@
     box-sizing: border-box;
   }
 
-  /* Sections (keep unchanged) */
+  /* Sections */
   section {
     background: white;
     border-radius: 12px;
@@ -298,12 +310,12 @@
 
   /* Responsive */
 
-  /* Hide hamburger by default */
+  /* Hamburger hidden by default */
   .hamburger {
     display: none;
   }
 
-  /* Smaller devices */
+  /* Mobile nav styles */
   @media (max-width: 800px) {
     nav ul {
       position: fixed;
@@ -336,7 +348,34 @@
     }
   }
 
-  /* About section stacking */
+  /* Hamburger animation */
+  .hamburger {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 11000;
+  }
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: 4px 2px;
+  }
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* About section stacking on smaller */
   @media (max-width: 700px) {
     #about {
       flex-direction: column;
@@ -349,7 +388,6 @@
     }
   }
 
-  /* Even smaller screens adjustments */
   @media (max-width: 500px) {
     main {
       margin: 80px 10px 40px;
@@ -408,8 +446,6 @@
     </div>
   </section>
 
-  <!-- rest of your sections unchanged -->
-
   <section id="experience">
     <h2>Experience</h2>
     <div class="job">
@@ -449,12 +485,40 @@
     </div>
   </section>
 
-  <!-- Projects, Skills, Certifications, Education, Contact sections remain unchanged -->
-
   <section id="projects">
     <h2>Projects</h2>
-    <!-- Your projects content here -->
-    <!-- (Same as original) -->
+    <div class="project">
+      <h3 class="project-role">REX Construction (Ongoing) - Sr.QA</h3>
+      <p>As a Sr. QA for a full-scale digital platform tailored to the construction industry, integrating CMS, web, and mobile apps (iOS & Android). The system supports both enterprise and individual users with features like AI-assisted support, document management, analytics, training, and subscription services.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">U-LEARN (Aug 2023 – Feb 2025) - Sr.QA</h3>
+      <p>Led quality assurance for a digital education platform connecting schools, teachers, and parents from early childhood to graduation. Oversaw testing of web and mobile applications, created test cases from user stories, and conducted comprehensive API testing to ensure a seamless and reliable user experience.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">U-MART (Aug 2023 – Feb 2025) - Sr.QA</h3>
+      <p>Directed QA efforts for a multi-role marketplace platform serving customers, delivery agents, and administrators. Managed end-to-end testing across mobile apps and web interfaces. Conducted API validation and authored detailed test cases to ensure system reliability and cross-platform performance.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">PENSION VAULT (Jan 2023 – Present) - Sr.QA</h3>
+      <p>Managed QA for a pension management platform with four distinct user roles. Ensured robust testing across all interfaces, validated APIs, and implemented structured test plans to support secure and accurate financial operations and reporting.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">ARK (Mar 2024 – Jun 2024) - QA & Business Analyst</h3>
+      <p>Dual responsibility for defining functional specs and ensuring product quality on a cross-platform content sharing app. Led requirement gathering, test strategy development, and user experience testing across Android, iOS, and web to deliver a collaborative, high-performing digital workspace.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">CREDEBT (Feb 2020 – May 2023) - Senior Software Quality Analyst</h3>
+      <p>Ensured QA for a financial platform offering alternatives to traditional credit services. Conducted full-cycle testing, including test case design, execution, and API testing using Swagger and Postman. Delivered a stable, scalable product to support business liquidity and trade finance.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">ONSOURCE – Genpact (Jan 2018 – Jan 2020) - Quality Analyst</h3>
+      <p>Contributed to QA for an insurance claims platform with 3D model functionality and Azure storage integration. Focused on mobile application testing for Android and iOS, validated media handling via Azure, and ensured consistency across platforms for enhanced claim processing.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">SOLID WASTE MANAGEMENT (Jan 2019 – Jan 2020) - Senior Software Quality Analyst</h3>
+      <p>Led QA for a multi-city waste management platform with real-time tracking and route optimization. Conducted mobile and web testing, created extensive test cases, and validated backend services via Swagger/Postman to deliver a reliable public service solution.</p>
+    </div>
   </section>
 
   <section id="skills">
@@ -510,23 +574,22 @@
 </main>
 
 <script>
-  // Hamburger toggle functionality
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
 
   hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 
-    // Accessibility toggle for aria-expanded
     const expanded = hamburger.getAttribute('aria-expanded') === 'true';
     hamburger.setAttribute('aria-expanded', !expanded);
   });
 
-  // Optional: Close menu when clicking a link (for mobile)
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       if(navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
       }
     });
