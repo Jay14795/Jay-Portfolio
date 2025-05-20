@@ -4,13 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jay Shashankkumar Gandhi - Senior Quality Analyst</title>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
-
-<!-- FontAwesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 <style>
   /* Reset */
   * {
@@ -22,7 +16,6 @@
     background: #f5f7fa;
     color: #333;
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
   a {
     color: #007acc;
@@ -76,49 +69,10 @@
     color: #66b2ff;
   }
 
-  /* Dark mode styles */
-  body.dark {
-    background: #121212;
-    color: #eee;
-  }
-  body.dark header {
-    background: #002233;
-  }
-  body.dark nav ul li a {
-    color: #bbb;
-  }
-  body.dark nav ul li a:hover {
-    color: #66b2ff;
-  }
-  body.dark section {
-    background: #1e1e1e;
-    box-shadow: 0 4px 20px rgba(255 255 255 / 0.1);
-  }
-  body.dark .btn-resume {
-    background: #3399ff;
-  }
-  body.dark .btn-resume:hover {
-    background: #007acc;
-  }
-  body.dark .skill-item {
-    background-color: #3399ff;
-    box-shadow: 0 2px 8px rgb(51 153 255 / 0.7);
-  }
-  body.dark .skill-item:hover {
-    background-color: #0066cc;
-  }
-  body.dark #certifications ul, 
-  body.dark #education p, 
-  body.dark .education-item h3, 
-  body.dark .project p,
-  body.dark .job ul {
-    color: #ccc;
-  }
-
   /* Main container */
   main {
     max-width: 900px;
-    margin: 80px auto 40px; /* Push content below fixed header */
+    margin: 80px auto 40px; /* <-- Push content below fixed header */
     padding: 0 20px;
   }
 
@@ -130,31 +84,16 @@
     margin-bottom: 40px;
     box-shadow: 0 4px 20px rgb(0 0 0 / 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-  }
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeInUp 0.6s ease forwards;
   }
   section:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgb(0 0 0 / 0.15);
   }
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   /* Headings */
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;  /* Reduced for name */
+    font-size: 2.2rem;  /* Reduced from 3rem */
     color: #004466;
     margin-bottom: 5px;
   }
@@ -310,118 +249,6 @@
     font-size: 1rem;
   }
 
-  /* Technologies / Tools Icons */
-  #technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-  .tech-icon {
-    font-size: 3rem;
-    color: #007acc;
-    transition: color 0.3s;
-    cursor: default;
-  }
-  .tech-icon:hover {
-    color: #005f99;
-  }
-  .tech-label {
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 6px;
-    color: #444;
-  }
-
-  /* Testimonials */
-  #testimonials {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  .testimonial {
-    background: #e6f0ff;
-    border-left: 5px solid #007acc;
-    padding: 20px 25px;
-    border-radius: 8px;
-    font-style: italic;
-    color: #003366;
-    box-shadow: 0 2px 8px rgb(0 122 204 / 0.2);
-    position: relative;
-  }
-  .testimonial::before {
-    content: "\201C"; /* Left double quote */
-    font-size: 3rem;
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    color: #007acc;
-  }
-  .testimonial-footer {
-    margin-top: 15px;
-    font-weight: 700;
-    color: #004466;
-    font-style: normal;
-  }
-
-  /* Blog / Articles */
-  #blog-articles {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .blog-post {
-    background: #f0f7ff;
-    padding: 20px 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgb(0 122 204 / 0.15);
-    transition: background-color 0.3s;
-  }
-  .blog-post:hover {
-    background-color: #e0eaff;
-  }
-  .blog-post h4 {
-    color: #007acc;
-    margin-bottom: 8px;
-  }
-  .blog-post p {
-    color: #333;
-  }
-
-  /* Social media footer */
-  footer {
-    text-align: center;
-    margin: 60px 0 30px;
-    color: #666;
-  }
-  footer a {
-    margin: 0 10px;
-    font-size: 1.6rem;
-    color: #007acc;
-    transition: color 0.3s;
-  }
-  footer a:hover {
-    color: #005f99;
-  }
-
-  /* Dark mode toggle button */
-  #dark-mode-toggle {
-    background: #007acc;
-    border: none;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgb(0 122 204 / 0.6);
-    transition: background-color 0.3s;
-  }
-  #dark-mode-toggle:hover {
-    background-color: #005f99;
-  }
-
   /* Responsive */
   @media (max-width: 700px) {
     #about {
@@ -431,18 +258,10 @@
     #about img {
       margin-bottom: 20px;
     }
-    #technologies {
-      justify-content: center;
-    }
-    #testimonials {
-      gap: 20px;
-    }
   }
   @media (max-width: 600px) {
     nav ul {
       gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
     }
     h1 {
       font-size: 1.8rem;
@@ -466,20 +285,15 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#technologies">Technologies</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#blog-articles">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><button id="dark-mode-toggle" title="Toggle dark mode">Dark Mode</button></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <!-- About Section -->
-  <section id="about" class="visible">
+  <section id="about">
     <img src="jay.jpg" alt="Jay Shashankkumar Gandhi" />
     <div>
       <h1>Jay Shashankkumar Gandhi</h1>
@@ -495,17 +309,7 @@
     </div>
   </section>
 
-  <!-- Profile Summary / Objective -->
-  <section id="profile-summary" class="visible">
-    <h2>Profile Summary</h2>
-    <p>
-      Experienced Senior Quality Analyst with a strong background in manual and automated testing, defect management, and AI integration.
-      Proven ability to lead QA teams and deliver reliable software products on time. Passionate about continuous learning and process improvement.
-    </p>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="visible">
+  <section id="experience">
     <h2>Experience</h2>
     <div class="job">
       <h3 class="job-title">Senior Quality Analyst - OpenXcell AI Development Company</h3>
@@ -544,8 +348,93 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="visible">
+  <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3 class="project-role">REX Construction (Ongoing) - Sr
+      <h3 class="project-role">REX Construction (Ongoing) - Sr.QA</h3>
+      <p>As a Sr. QA for a full-scale digital platform tailored to the construction industry, integrating CMS, web, and mobile apps (iOS & Android). The system supports both enterprise and individual users with features like AI-assisted support, document management, analytics, training, and subscription services.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">U-LEARN (Aug 2023 – Feb 2025) - Sr.QA</h3>
+      <p>Led quality assurance for a digital education platform connecting schools, teachers, and parents from early childhood to graduation. Oversaw testing of web and mobile applications, created test cases from user stories, and conducted comprehensive API testing to ensure a seamless and reliable user experience.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">U-MART (Aug 2023 – Feb 2025) - Sr.QA</h3>
+      <p>Directed QA efforts for a multi-role marketplace platform serving customers, delivery agents, and administrators. Managed end-to-end testing across mobile apps and web interfaces. Conducted API validation and authored detailed test cases to ensure system reliability and cross-platform performance.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">PENSION VAULT (Jan 2023 – Present) - Sr.QA</h3>
+      <p>Managed QA for a pension management platform with four distinct user roles. Ensured robust testing across all interfaces, validated APIs, and implemented structured test plans to support secure and accurate financial operations and reporting.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">ARK (Mar 2024 – Jun 2024) - QA & Business Analyst</h3>
+      <p>Dual responsibility for defining functional specs and ensuring product quality on a cross-platform content sharing app. Led requirement gathering, test strategy development, and user experience testing across Android, iOS, and web to deliver a collaborative, high-performing digital workspace.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">CREDEBT (Feb 2020 – May 2023) - Senior Software Quality Analyst</h3>
+      <p>Ensured QA for a financial platform offering alternatives to traditional credit services. Conducted full-cycle testing, including test case design, execution, and API testing using Swagger and Postman. Delivered a stable, scalable product to support business liquidity and trade finance.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">ONSOURCE – Genpact (Jan 2018 – Jan 2020) - Quality Analyst</h3>
+      <p>Contributed to QA for an insurance claims platform with 3D model functionality and Azure storage integration. Focused on mobile application testing for Android and iOS, validated media handling via Azure, and ensured consistency across platforms for enhanced claim processing.</p>
+    </div>
+    <div class="project">
+      <h3 class="project-role">SOLID WASTE MANAGEMENT (Jan 2019 – Jan 2020) - Senior Software Quality Analyst</h3>
+      <p>Led QA for a multi-city waste management platform with real-time tracking and route optimization. Conducted mobile and web testing, created extensive test cases, and validated backend services via Swagger/Postman to deliver a reliable public service solution.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill-item">Automated Testing</span>
+      <span class="skill-item">Manual Testing</span>
+      <span class="skill-item">Defect Tracking</span>
+      <span class="skill-item">QA Tools</span>
+      <span class="skill-item">Cross-functional Collaboration</span>
+      <span class="skill-item">Team Leadership</span>
+      <span class="skill-item">Agile Methodologies</span>
+      <span class="skill-item">Performance Testing</span>
+      <span class="skill-item">Regression Testing</span>
+      <span class="skill-item">Test Case Design</span>
+      <span class="skill-item">Requirements Analysis</span>
+      <span class="skill-item">AI Integration</span>
+      <span class="skill-item">SDLC Expertise</span>
+      <span class="skill-item">Web & API Testing</span>
+      <span class="skill-item">Automation</span>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Project Management Assessment</li>
+      <li>Selectors Hub Certification Program</li>
+      <li>Test Case Studio Certification Program</li>
+      <li>NSDC Advance Selenium Certificate</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>BE in Electronics & Communication Engineering</h3>
+      <p>Hasmukh Goswami College of Engineering, Vahelal (2013 - 2016)</p>
+    </div>
+    <div class="education-item">
+      <h3>Diploma in Electronics & Communication Engineering</h3>
+      <p>F.D Institute of Engineering, Bahiyal (2010 - 2013)</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>F504, Pushkar Green, B/h Maruti Popular Showroom, Isanpur, Ahmedabad 382443</p>
+    <p>Phone: +91 87339 18538</p>
+    <p>Email: <a href="mailto:Jaygandhi147@gmail.com">Jaygandhi147@gmail.com</a></p>
+    <p>Portfolio: <a href="https://tinyurl.com/jaygandhiporfolio" target="_blank" rel="noopener noreferrer">https://tinyurl.com/jaygandhiporfolio</a></p>
+  </section>
+</main>
+
+</body>
+</html>
