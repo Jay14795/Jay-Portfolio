@@ -4,71 +4,207 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jay Shashankkumar Gandhi - Senior Quality Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset and basics */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
-      color: #222;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
       line-height: 1.6;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header / Nav */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #003366;
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      font-weight: 500;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #63b3ed;
+    }
+
+    /* Main container */
+    main {
+      max-width: 900px;
+      margin: 90px auto 40px; /* margin-top = header height + some space */
+      padding: 0 20px;
     }
     h1, h2, h3 {
       color: #003366;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
     }
     h2 {
-      border-bottom: 2px solid #003366;
+      border-bottom: 3px solid #1e90ff;
       padding-bottom: 5px;
-      margin-top: 40px;
-    }
-    .title {
-      font-style: italic;
-      color: #555;
+      margin-top: 50px;
       margin-bottom: 20px;
+      font-weight: 600;
     }
-    ul {
-      padding-left: 20px;
+    h3 {
+      font-weight: 600;
+      margin-bottom: 8px;
     }
+
+    /* Sections */
+    section {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    /* About */
+    #about p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Experience and Projects */
     .job, .project {
       margin-bottom: 15px;
     }
     .job-title, .project-role {
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1e90ff;
+    }
+    .job-duration, .job-location {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+
+    /* Skills list */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-item {
+      background: #1e90ff;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    /* Contact */
+    .contact p {
+      margin: 6px 0;
+      font-size: 1rem;
     }
     .contact a {
-      color: #003366;
-      text-decoration: none;
+      font-weight: 600;
     }
-    .contact a:hover {
-      text-decoration: underline;
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 10px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 20px;
+      }
+      .skills-list {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Jay Shashankkumar Gandhi</h1>
-  <p class="title">Senior Quality Analyst</p>
+<header>
+  <nav>
+    <div class="logo">Jay Gandhi</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Dynamic Senior Quality Analyst with a proven track record at OpenXcell – AI Development Company,
-    specializing in automation testing and defect management. Skilled in leading QA teams, streamlining
-    testing workflows, and integrating AI tools to enhance efficiency and accuracy. Committed to
-    delivering high-quality software through strong cross-functional collaboration, clear communication,
-    and a passion for continuous improvement in quality assurance processes.</p>
+<main>
+  <section id="about">
+    <h1>Jay Shashankkumar Gandhi</h1>
+    <p><em>Senior Quality Analyst</em></p>
+    <p>
+      Dynamic Senior Quality Analyst with a proven track record at OpenXcell – AI Development Company,
+      specializing in automation testing and defect management. Skilled in leading QA teams, streamlining
+      testing workflows, and integrating AI tools to enhance efficiency and accuracy. Committed to
+      delivering high-quality software through strong cross-functional collaboration, clear communication,
+      and a passion for continuous improvement in quality assurance processes.
+    </p>
   </section>
 
-  <section>
+  <section id="experience">
     <h2>Experience</h2>
 
     <div class="job">
-      <p class="job-title">Senior Quality Analyst - OpenXcell AI Development Company</p>
-      <p><em>March 2025 - Present, Ahmedabad, Gujarat</em></p>
+      <h3 class="job-title">Senior Quality Analyst - OpenXcell AI Development Company</h3>
+      <p class="job-duration">March 2025 - Present</p>
+      <p class="job-location">Ahmedabad, Gujarat</p>
       <ul>
         <li>Executed manual and automated testing for ERP, E-Commerce, CMS, insurance, banking, and mobile apps using Selenium, Postman, Swagger, and Appium.</li>
         <li>Managed defect tracking with Jira, Bugzilla, Redmine, and TestLink.</li>
@@ -77,8 +213,9 @@
     </div>
 
     <div class="job">
-      <p class="job-title">Senior Quality Analyst - Impero IT Services Pvt. Ltd.</p>
-      <p><em>July 2023 - Feb 2025, Ahmedabad, Gujarat</em></p>
+      <h3 class="job-title">Senior Quality Analyst - Impero IT Services Pvt. Ltd.</h3>
+      <p class="job-duration">July 2023 - Feb 2025</p>
+      <p class="job-location">Ahmedabad, Gujarat</p>
       <ul>
         <li>Collaborated with cross-functional teams to meet product quality goals.</li>
         <li>Managed and guided QA team on best practices.</li>
@@ -86,109 +223,97 @@
     </div>
 
     <div class="job">
-      <p class="job-title">Quality Analyst - Silicon IT Hub Pvt Ltd.</p>
-      <p><em>May 2018 - June 2023, Ahmedabad, Gujarat</em></p>
+      <h3 class="job-title">Quality Analyst - Silicon IT Hub Pvt Ltd.</h3>
+      <p class="job-duration">May 2018 - June 2023</p>
+      <p class="job-location">Ahmedabad, Gujarat</p>
       <ul>
         <li>Built foundational QA experience and contributed to client-focused initiatives.</li>
       </ul>
     </div>
 
     <div class="job">
-      <p class="job-title">Apprenticeship - Midco Limited</p>
-      <p><em>Nov 2016 - Nov 2017, Ahmedabad, Gujarat (On-site)</em></p>
+      <h3 class="job-title">Apprenticeship - Midco Limited</h3>
+      <p class="job-duration">Nov 2016 - Nov 2017</p>
+      <p class="job-location">Ahmedabad, Gujarat (On-site)</p>
       <ul>
         <li>Developed practical skills and industry understanding.</li>
       </ul>
     </div>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
 
     <div class="project">
-      <p class="project-role">REX Construction (Ongoing) - Sr. QA</p>
+      <h3 class="project-role">REX Construction (Ongoing) - Sr. QA</h3>
       <p>Full-scale digital platform for construction with CMS, web, and mobile apps featuring AI-assisted support, document management, analytics, training, and subscriptions.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">U-LEARN (Aug 2023 – Feb 2025) - Sr. QA</p>
+      <h3 class="project-role">U-LEARN (Aug 2023 – Feb 2025) - Sr. QA</h3>
       <p>Digital education platform connecting schools, teachers, and parents. Led testing of web/mobile apps and API testing.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">U-MART (Aug 2023 – Feb 2025) - Sr. QA</p>
+      <h3 class="project-role">U-MART (Aug 2023 – Feb 2025) - Sr. QA</h3>
       <p>Multi-role marketplace platform. Managed end-to-end testing for mobile/web, API validation, and cross-platform performance.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">PENSION VAULT (Jan 2023 – Present) - Sr. QA</p>
+      <h3 class="project-role">PENSION VAULT (Jan 2023 – Present) - Sr. QA</h3>
       <p>Pension management platform QA. Tested all interfaces and APIs to ensure secure financial operations.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">ARK (Mar 2024 – Jun 2024) - QA & Business Analyst</p>
+      <h3 class="project-role">ARK (Mar 2024 – Jun 2024) - QA & Business Analyst</h3>
       <p>Defined specs and ensured product quality for cross-platform content sharing app.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">CREDEBT (Feb 2020 – May 2023) - Senior Software Quality Analyst</p>
+      <h3 class="project-role">CREDEBT (Feb 2020 – May 2023) - Senior Software Quality Analyst</h3>
       <p>QA for financial platform offering credit alternatives. Full-cycle testing including API testing.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">ONSOURCE – Genpact (Jan 2018 – Jan 2020) - Quality Analyst</p>
+      <h3 class="project-role">ONSOURCE – Genpact (Jan 2018 – Jan 2020) - Quality Analyst</h3>
       <p>QA for insurance claims platform with mobile app testing and Azure integration.</p>
     </div>
 
     <div class="project">
-      <p class="project-role">SOLID WASTE MANAGEMENT (Jan 2019 – Jan 2020) - Senior Software Quality Analyst</p>
+      <h3 class="project-role">SOLID WASTE MANAGEMENT (Jan 2019 – Jan 2020) - Senior Software Quality Analyst</h3>
       <p>QA for multi-city waste management platform with real-time tracking and route optimization.</p>
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Automated and manual testing</li>
-      <li>Defect tracking and management</li>
-      <li>Quality assurance and testing tools</li>
-      <li>Cross-functional collaboration</li>
-      <li>Team leadership and agile methodologies</li>
-      <li>Performance and regression testing</li>
-      <li>Test case design and management</li>
-      <li>Requirements analysis and communication skills</li>
-      <li>AI integration in testing</li>
-      <li>Software development lifecycle expertise</li>
-      <li>Web application and API testing</li>
-      <li>Automation and writing test cases</li>
-    </ul>
+    <div class="skills-list">
+      <span class="skill-item">Automated Testing</span>
+      <span class="skill-item">Manual Testing</span>
+      <span class="skill-item">Defect Tracking</span>
+      <span class="skill-item">QA Tools</span>
+      <span class="skill-item">Cross-functional Collaboration</span>
+      <span class="skill-item">Team Leadership</span>
+      <span class="skill-item">Agile Methodologies</span>
+      <span class="skill-item">Performance Testing</span>
+      <span class="skill-item">Regression Testing</span>
+      <span class="skill-item">Test Case Design</span>
+      <span class="skill-item">Requirements Analysis</span>
+      <span class="skill-item">AI Integration</span>
+      <span class="skill-item">SDLC Expertise</span>
+      <span class="skill-item">Web & API Testing</span>
+      <span class="skill-item">Automation</span>
+    </div>
   </section>
 
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      <li>Project management assessment</li>
-      <li>Selectors Hub Certification Program</li>
-      <li>Test Case Studio Certification Program</li>
-      <li>NSDC Advance Selenium Certificate</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li>BE in E.C (2013-2016) – Hasmukh Goswami College of Engineering, Vahelal</li>
-      <li>Diploma in EC (2010-2016) – F.D Institute of Engineering, Bahiyal</li>
-    </ul>
-  </section>
-
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p>F504, Pushkar Green, B/h Maruti Popular Showroom, Isanpur, Ahmedabad 382443</p>
     <p>Phone: +91 87339 18538</p>
     <p>Email: <a href="mailto:Jaygandhi147@gmail.com">Jaygandhi147@gmail.com</a></p>
     <p>Portfolio: <a href="https://tinyurl.com/jaygandhiporfolio" target="_blank" rel="noopener noreferrer">https://tinyurl.com/jaygandhiporfolio</a></p>
   </section>
+</main>
 
 </body>
 </html>
