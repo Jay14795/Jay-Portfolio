@@ -84,6 +84,7 @@
     cursor: pointer;
     transition: filter 0.3s ease;
     flex-shrink: 0;
+    animation: logoBounce 1.5s ease forwards;
   }
   nav .logo:hover {
     filter: drop-shadow(0 0 8px #aad4ff);
@@ -171,30 +172,17 @@
     margin-bottom: 40px;
     box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
     opacity: 0;
-    animation: fadeScaleIn 1s forwards;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    /* Removed old fadeScaleIn animation */
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   section:hover {
     transform: translateY(-6px) scale(1.04);
     box-shadow: 0 14px 40px rgb(0 0 0 / 0.22);
-  }
-  section:nth-of-type(1) { animation-delay: 0.1s; }
-  section:nth-of-type(2) { animation-delay: 0.3s; }
-  section:nth-of-type(3) { animation-delay: 0.5s; }
-  section:nth-of-type(4) { animation-delay: 0.7s; }
-  section:nth-of-type(5) { animation-delay: 0.9s; }
-  section:nth-of-type(6) { animation-delay: 1.1s; }
-  section:nth-of-type(7) { animation-delay: 1.3s; }
-
-  @keyframes fadeScaleIn {
-    from {
-      opacity: 0;
-      transform: translateY(15px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
   }
 
   /* Headings */
@@ -296,11 +284,11 @@
     font-size: 1rem;
     user-select: none;
     box-shadow: 0 3px 10px rgb(26 115 232 / 0.45);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .skill-item:hover {
-    background-color: #0d4db7;
-    box-shadow: 0 5px 15px rgb(13 77 183 / 0.7);
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgb(26 115 232 / 0.8);
     cursor: default;
   }
 
@@ -329,12 +317,13 @@
     font-weight: 700;
     border-radius: 35px;
     box-shadow: 0 5px 18px rgb(26 115 232 / 0.6);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     text-decoration: none;
   }
   .btn-resume:hover {
     background-color: #0d4db7;
     box-shadow: 0 7px 25px rgb(13 77 183 / 0.9);
+    transform: translateY(-3px);
   }
 
   /* Responsive */
@@ -425,6 +414,12 @@
     section {
       padding: 20px 15px;
     }
+  }
+
+  /* Logo bounce animation on page load */
+  @keyframes logoBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 </style>
 </head>
@@ -627,6 +622,24 @@
         hamburger.setAttribute('aria-expanded', 'false');
       }
     });
+  });
+
+  // Animate sections when they enter viewport
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
   });
 </script>
 
