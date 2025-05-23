@@ -421,6 +421,22 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
+
+  /* Highlight banner for keyword detection */
+  #highlight-banner {
+    position: fixed;
+    top: 70px; /* below fixed header */
+    width: 100%;
+    background-color: #0b3d91;
+    color: #aad4ff;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px 0;
+    z-index: 10500;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+  }
 </style>
 </head>
 <body>
@@ -452,6 +468,11 @@
     </ul>
   </nav>
 </header>
+
+<!-- Highlight banner for keyword matches -->
+<div id="highlight-banner" role="alert" aria-live="polite">
+  Welcome! You found Jay Gandhi - Best QA Expert in IT Industry.
+</div>
 
 <main>
   <section id="about">
@@ -641,6 +662,38 @@
   sections.forEach(section => {
     observer.observe(section);
   });
+</script>
+
+<script>
+  (function() {
+    // Keywords to check in referrer or URL query
+    const keywords = [
+      "jay", "jay gandhi", "best qa", "best qa in it industry"
+    ];
+
+    function containsKeyword(text) {
+      if (!text) return false;
+      text = text.toLowerCase();
+      return keywords.some(keyword => text.includes(keyword));
+    }
+
+    // Check document referrer
+    const referrer = document.referrer;
+
+    // Check URL search parameters (q=)
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q') || '';
+
+    if (containsKeyword(referrer) || containsKeyword(query)) {
+      // Show the highlight banner
+      const banner = document.getElementById('highlight-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        // Optionally scroll to top or focus on about section
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  })();
 </script>
 
 </body>
